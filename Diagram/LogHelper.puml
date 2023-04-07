@@ -1,0 +1,21 @@
+@startuml
+class LogHelper {
+    + logPrefix : string = "#"
+    + logSeparate : string = ">>"
+    + enableLog : bool = true
+    + enableWain : bool = true
+    + enableError : bool = true
+    + enableDebug : bool = true
+    + enableTime : bool = true
+    + enableThreadId : bool = true
+    + enableTrace : bool = true
+    + enableSave : bool = true
+    + enableCover : bool = true
+    + logType : LogType
+    + logFunc : Action<string>?
+    + wainFunc : Action<string>?
+    + errorFunc : Action<string>?
+    + SaveName : string? <<get>>
+    + SavePath : string? <<get>>
+}
+@enduml

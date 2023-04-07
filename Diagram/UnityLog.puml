@@ -1,0 +1,15 @@
+@startuml
+class UnityLog {
+    - logFunc : Action<string>?
+    - wainFunc : Action<string>?
+    - errorFunc : Action<string>?
+    + UnityLog(logFunc:Action<string>?, wainFunc:Action<string>?, errorFunc:Action<string>?)
+    + Log(msg:string, color:LogColor) : void
+    + Wain(msg:string, color:LogColor) : void
+    + Error(msg:string, color:LogColor) : void
+    + Debug(msg:string, color:LogColor) : void
+    + ColorLog(msg:string, color:LogColor) : void
+    - {static} AddColor(msg:string, color:LogColor) : string
+}
+ILog <|-- UnityLog
+@enduml

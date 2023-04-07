@@ -1,0 +1,10 @@
+@startuml
+class NetLog {
+    + Log(msg:string, color:LogColor) : void
+    + Wain(msg:string, color:LogColor) : void
+    + Error(msg:string, color:LogColor) : void
+    + Debug(msg:string, color:LogColor) : void
+    + ColorLog(msg:string, color:LogColor) : void
+}
+ILog <|-- NetLog
+@enduml

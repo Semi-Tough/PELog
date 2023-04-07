@@ -1,0 +1,31 @@
+@startuml
+class ExtensionMethod <<static>> {
+    + {static} Log(o:object, obj:object) : void
+    + {static} Wain(o:object, obj:object) : void
+    + {static} Error(o:object, obj:object) : void
+    + {static} Debug(o:object, obj:object) : void
+    + {static} Trace(o:object, obj:object) : void
+    + {static} ColorLog(o:object, obj:object, color:LogColor) : void
+}
+class PELog <<static>> {
+    - <<const>> LogLock : string = "PELog"
+    - {static} logger : ILog
+    - {static} logArgs : LogArgs
+    - {static} streamWriter : StreamWriter?
+    + {static} InitLog(args:LogArgs) : void
+    + {static} Log(obj:object) : void
+    + {static} Wain(obj:object) : void
+    + {static} Error(obj:object) : void
+    + {static} Debug(obj:object) : void
+    + {static} ColorLog(obj:object, color:LogColor) : void
+    + {static} Trace(obj:object) : void
+    - {static} DecorateLog(msg:string, isTrac:bool) : string
+    - {static} GetTime() : string
+    - {static} GetThreadId() : string
+    - {static} GetStackTrace() : string
+    - {static} CreateLocalFile() : void
+    - {static} WriteToFile(msg:string) : void
+}
+PELog *-right- ILog
+PELog -left-> LogArgs
+@enduml
