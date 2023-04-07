@@ -1,7 +1,7 @@
 @startuml
 !include .\\ILog.puml
 !include .\\LogArgs.puml
+!include .\\Logger.puml
 !include .\\NetLog.puml
-!include .\\PELog.puml
 !include .\\UnityLog.puml
 @enduml

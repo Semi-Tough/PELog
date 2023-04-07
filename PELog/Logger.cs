@@ -7,26 +7,26 @@ using System.Threading;
 namespace PELog {
 	public static class ExtensionMethod {
 		public static void Log(this object o, object obj) {
-			PELog.Log(obj);
+			Logger.Log(obj);
 		}
 		public static void Wain(this object o, object obj) {
-			PELog.Wain(obj);
+			Logger.Wain(obj);
 		}
 		public static void Error(this object o, object obj) {
-			PELog.Error(obj);
+			Logger.Error(obj);
 		}
 		public static void Debug(this object o, object obj) {
-			PELog.Debug(obj);
+			Logger.Debug(obj);
 		}
 		public static void Trace(this object o, object obj) {
-			PELog.Trace(obj);
+			Logger.Trace(obj);
 		}
 		public static void ColorLog(this object o, object obj, LogColor color) {
-			PELog.ColorLog(obj, color);
+			Logger.ColorLog(obj, color);
 		}
 	}
 
-	public static class PELog {
+	public static class Logger {
 		private const string LogLock = "PELog";
 
 		private static ILog logger = null!;
